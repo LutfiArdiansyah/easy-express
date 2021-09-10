@@ -4,8 +4,8 @@ Easy Express is framework to help you build apps quickly.
 
 ## Feature
 
-- [Ok] Dynamic filtering, searching, sorting\
-  &nbsp;&nbsp;&nbsp;`params : {filters:[],searchs:[],fields:[],sorts:[]}`\
+- [Ok] Dynamic filtering, searching, sorting, paging\
+  &nbsp;&nbsp;&nbsp;`params : {filters:[],searchs:[],fields:[],sorts:[],offset:0,limit:5}`\
   &nbsp;&nbsp;&nbsp;`filters : [{"field":"email","value":"john.doe@gmail.com","valueIn":[],"op":"="}]`\
   &nbsp;&nbsp;&nbsp;`searchs: ["john"]`\
   &nbsp;&nbsp;&nbsp;`fields: ["email"]`\
