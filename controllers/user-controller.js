@@ -30,6 +30,14 @@ class UserController {
     }
   }
 
+  async getById(req, res, next) {
+    try {
+      res.json(new BaseResponse(await models.user.findByPk(req.params.id)));
+    } catch (error) {
+      next(error);
+    }
+  }
+
   async post(req, res, next) {}
 }
 

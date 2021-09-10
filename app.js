@@ -47,16 +47,18 @@ app.use(function (err, req, res, next) {
   console.error(req.body);
   console.error(err);
 
-  res.json(
-    new BaseResponse(
-      new Config().env === "development" ? err : {},
-      new Config().env === "development"
-        ? err.message
-        : "Something wrong, please try again later!",
-      500,
-      false
-    )
-  );
+  res
+    .status(500)
+    .send(
+      new BaseResponse(
+        new Config().env === "development" ? err : {},
+        new Config().env === "development"
+          ? err.message
+          : "Something wrong, please try again later!",
+        500,
+        false
+      )
+    );
 });
 
 module.exports = app;
