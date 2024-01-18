@@ -13,10 +13,10 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
-const BaseResponse = require("./entity/base-response");
-const Config = require("./entity/config");
+const BaseResponse = require("./class/base-response");
+const Config = require("./class/config");
 const corsOptions = require("./public/jsonnate/cors.json");
-const prefix = "/api/v1/";
+const prefix = process.env.PREFIX;
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -32,7 +32,7 @@ app.use(cors(corsOptions));
 app.use(helmet());
 
 app.use("/", indexRouter);
-app.use(`${prefix}users`, usersRouter);
+app.use(`${prefix}/users`, usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

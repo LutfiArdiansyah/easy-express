@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue: sequelize.UUIDV4, // Or sequelize.UUIDV1
+        defaultValue: DataTypes.UUIDV4, // Or sequelize.UUIDV1
         allowNull: false,
         primaryKey: true,
       },
@@ -109,7 +109,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       token: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       createdBy: {
         type: DataTypes.STRING,

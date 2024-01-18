@@ -2,7 +2,7 @@ const { validationResult } = require("express-validator");
 const { validate } = require("uuid");
 
 class Validator {
-  async uuid(req, res, next) {
+  async paramsUuid(req, res, next) {
     if (!validate(req.params.id)) {
       next("Invalid UUID!");
     }

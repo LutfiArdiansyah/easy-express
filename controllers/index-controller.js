@@ -1,7 +1,7 @@
 var models = require("../models/index");
-var BaseResponse = require("../entity/base-response");
+var BaseResponse = require("../class/base-response");
 var info = require("../public/jsonnate/info.json");
-const Config = require("../entity/config");
+const Config = require("../class/config");
 
 class IndexController {
   index(req, res, next) {
